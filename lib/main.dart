@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Text('This is my Default Text!'),
+        body: Text('I commit changes in git'),
       ),
     );
   }
