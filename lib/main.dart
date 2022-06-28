@@ -37,26 +37,26 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
   void _answerQuestion() {
-  if (_questionIndex < questions.length) {
-    print('We have more questions!');
-  }
-
-
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
+    if (_questionIndex < questions.length) {
+      print('We have more questions!');
+    } else {
+      print('No more questions!');
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: [
             Question(
               questions[_questionIndex]['questionText'] as String,
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               return Answer(_answerQuestion, answer);
             }).toList()
           ],
-        ),
+        ) : Center(child: Text('You did It!'),),
       ),
     );
   }
