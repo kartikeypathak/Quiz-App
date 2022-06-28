@@ -1,6 +1,7 @@
 # quiz_app
 
 A new Flutter project.
+This is just a personality quiz app it judges peronality on the basis of quiz.
 
 ## Getting Started
 
